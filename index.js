@@ -1,4 +1,4 @@
-document.querySelector("#btn").onclick = function () { rollDice() };
+document.querySelector("#btn").addEventListener("click", rollDice);
 
 function rollDice() {
     let score1 = (Math.floor(Math.random() * 6)) + 1;
@@ -28,7 +28,6 @@ function rollDice() {
 
     switch (score2) {
         case 1:
-            console.log("one");
             document.querySelector("#dice2").src = "images/dice1.png";
             break;
         case 2:
@@ -47,10 +46,20 @@ function rollDice() {
             document.querySelector("#dice2").src = "images/dice6.png";
     }
 
-    if (score1 > score2)
-        document.querySelector(".heading").textContent = "🚩Player 1 Wins!"
-    else if (score2 > score1)
-        document.querySelector(".heading").textContent = "Player 2 Wins!🚩"
-    else
-        document.querySelector(".heading").textContent = "Draw!"
+    if (score1 > score2) {
+        let lost = new Audio("tones/lost.wav");
+        lost.play();
+        document.querySelector(".heading").textContent = "You lost!"
+    }
+    else if (score2 > score1) {
+        document.querySelector(".heading").textContent = "You Win🚩"
+        let won = new Audio("tones/won.wav");
+        won.play();
+    }
+
+    else {
+        document.querySelector(".heading").textContent = "Draw!";
+        let draw = new Audio("tones/draw.wav");
+        draw.play();
+    }
 }

@@ -1,67 +1,113 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Lobster&display=swap');
 
-body {
-    background-color: #393e46;
-    text-align: center;
-    margin: 0;
+html {
+    background-color: #fff;
 }
 
-#btn
-{
-    position: absolute;
-    left: 165px;
-    top: 273px;
-    width: 139px;
-    height: 80px;
+body {
+    max-width: 1000px;
+    background-color: #0c2239;
+    text-align: center;
+    margin: auto;
+    margin-top: 0;
+}
+
+#btn {
+    width: 7rem;
+    height: 60px;
     background-color: rgb(130, 17, 229);
     color: white;
-    border:none;
-    font-size: 24px;
+    border: none;
+    padding: 0.2em;
+    font-size: 1.3rem;
     box-shadow: 0 0px 5px inset rgba(115, 16, 202, 0.83);
     border-radius: 10px;
     text-shadow: #393e46 0px 2px;
 }
 
-#btn:hover
-{
+#btn:hover {
     box-shadow: 10px 10px 10px 5px inset rgba(115, 16, 202, 0.83);
 }
 
-#btn:active
-{
+#btn:active {
     background-color: rgb(121, 30, 200);
 }
 
 main {
     min-height: calc(100vh - 30px - 67px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .heading {
-    font-size: 8rem;
+    font-size: 6rem;
     color: rgb(78, 204, 163);
     font-family: Lobster, cursive;
-    margin:30px;
+    margin-top: 0;
+    margin-bottom: 0.8em;
     text-shadow: 5px 0 black;
 }
 
 .player {
-    font-size:32px;
+    font-size: 2rem;
     display: inline-block;
-    padding: 20px;
     font-family: 'Indie Flower', cursive;
     color: rgb(78, 204, 163);
-    margin: 32px 71px;
+    margin: 0.5em 3.2em 0.5em 1.5em;
 }
 
-#dice1,#dice2
+#dice1,
+#dice2 {
+    width: 20%;
+    margin: 0 2em;
+    margin-bottom: 5em;
+}
+
+.component
 {
-    margin:0 30px;
+    display: flex;
+    justify-content: center;
 }
-
 
 footer {
     font-family: 'Indie Flower', cursive;
     color: white;
     font-size: 18px;
-    padding: 20px 0;
+    padding: 0.7em;
+}
+
+@media (max-width:755px) {
+    .heading {
+        margin-bottom: 2em;
+    }
+
+    html {
+        font-size: 12px;
+    }
+
+}
+
+@media (max-width:540px) {
+    .heading {
+        font-size: 5rem;
+        margin-bottom: 2em;
+    }
+
+    .player {
+        margin: 0.5em 2.3em 0.5em 0.6em;
+    }
+
+
+}
+
+@media (max-width:438px) {
+
+    .player {
+        margin: 0.5em 1.5em 0.5em 0.4em;
+    }
+
+    html {
+        font-size: 10px;
+    }
 }
